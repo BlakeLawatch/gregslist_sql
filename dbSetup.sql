@@ -13,17 +13,21 @@ CREATE TABLE
         id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
         name CHAR(225) NOT NULL,
         numberOfMeats INT NOT NULL,
-        calories INT NOT NULL,
-        menuItem ENUM('1', '2', '3', '4', '5', '6', '7') NOT NULL
+        calories INT NOT NULL
     ) default charset utf8 COMMENT '';
 
 INSERT INTO
     arbys (
         name,
         `numberOfMeats`,
-        calories,
-        `menuItem`
+        calories
     )
-VALUES ("Roast Beef aujus", 1, 700, 4)
+VALUES ("Roast Beef aujus", 1, 700), ("Beef n Cheddar", 4, 1200), (
+        "Double Beef n Cheddar",
+        8,
+        2400
+    )
 
 SELECT * FROM arbys
+
+DROP TABLE arbys
