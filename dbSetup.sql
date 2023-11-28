@@ -30,4 +30,6 @@ VALUES ("Roast Beef aujus", 1, 700), ("Beef n Cheddar", 4, 1200), (
 
 SELECT * FROM arbys
 
+UPDATE arbys SET name = "roast beef" calories = 15000 WHERE id = 4
+
 DROP TABLE arbys

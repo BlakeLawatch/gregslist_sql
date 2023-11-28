@@ -58,5 +58,35 @@ namespace gregslist_sql.Controllers
                 return BadRequest(error.Message);
             }
         }
+
+        [HttpPost]
+        public ActionResult<Arby> CreateArby([FromBody] Arby arbyData)
+        {
+            try
+            {
+                Arby arby = _arbysService.CreateArby(arbyData);
+                return Ok(arby);
+            }
+            catch (Exception error)
+            {
+
+                return BadRequest(error.Message);
+            }
+        }
+
+        [HttpPut("{arbyId}")]
+        public ActionResult<Arby> UpdateArby(int arbyId, [FromBody] Arby arbyData)
+        {
+            try
+            {
+                Arby arby = _arbysService.UpdateArby(arbyId, arbyData);
+                return Ok(arby);
+            }
+            catch (Exception error)
+            {
+
+                return BadRequest(error.Message);
+            }
+        }
     }
 }
